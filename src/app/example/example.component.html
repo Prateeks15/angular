@@ -1,0 +1,66 @@
+<!--Assignment Section-->
+<div class="container">
+<div class="row">
+    <div class="col-xs-12">
+<h1>Assignment</h1>
+<ol>
+    <li>Create a new Angular app using Angular CLI</li>
+    <li>Create new component using Angular CLI</li>
+    <li>Create a input feild that captures user name</li>
+    <li>Create two-way data binding for entered user name</li>
+    <li>Create a button that clears the user name</li>
+    <li>Add condition to enable the button only if input feild has some value.</li>
+</ol>
+<label for="">Username</label>
+<!--Two way Binding uing ngModel-->
+<input type="text" class="form-control" [(ngModel)]="username">
+<!--String interpolation-->
+<p>{{username}}</p>
+<!--Property and Event binding-->
+<button 
+class="btn btn-primary" 
+[disabled]="username === '' "
+(click)="username = '' ">Reset</button>
+</div>
+</div>
+</div>
+<hr>
+
+
+<!--Example Section-->
+
+
+
+<!--String interpolation example-->
+<h2>A. String interpolation example</h2>
+<p>{{ 'Hello' }} my name is {{examplename}} and I'm {{ getExample() }}  year old</p><hr>
+
+<!--Property Binding example-->
+<h2>B. Property Binding</h2>
+
+<!--Well basically if you want to output something in your template, print some text to it, use string interpolation,-->
+<p [innerText] = "!allowNewEXample">Button will get get enabled after 2 second</p>
+<button class="btn btn-primary" [disabled] = "!allowNewEXample">Disabled</button>
+<hr>
+
+<!--Event Binding -->
+<h2>C. Event Binding</h2>
+
+<!--Important: For events, you don't bind to onclick but only to click (=> (click)).-->
+<h3>1. $event example</h3>
+<input type="text" class="form-control" (input)="onUpdateExample($event)">
+<p>{{ egname }}</p>
+
+<h3>2. Event Binding example</h3>
+<button class="btn btn-primary" (click)="onCreateExample()">Click me</button>
+
+<p>{{ examplecreation }}</p>
+<hr>
+
+<!--Two Way Binding-->
+<h2>D. Two Way Binding</h2>
+<input type="text" class="form-control" [(ngModel)]="eg2name">
+<p>{{ eg2name }}</p>
+
+
+
